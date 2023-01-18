@@ -1,0 +1,14 @@
+trigger:
+- master
+
+pool:
+  vmImage: 'ubuntu-latest'
+  
+steps:
+- task: UseDotNet@2
+  inputs:
+    version: '6.x'
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'test'
+    projects: '**/*.csproj'
